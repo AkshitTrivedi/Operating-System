@@ -1,0 +1,32 @@
+===================================================
+Name : Trivedi Akshit Ajaybhai
+Roll : 40
+Subject : Operating System
+Assignment 1
+Course : MCA-2
+===================================================
+
+#3. Write a script to reverse a six-digit number.
+
+
+echo -e -n "Enter six digit Number : "
+read num
+rev=0
+while [ $num -gt 0 ]
+do
+        digit=$(( $num % 10 ))
+        rev=`expr $rev \* 10 + $digit`
+#       echo -n "$digit"
+        num=$(( $num / 10 ))
+
+done
+echo "Reversed Number is :  $rev"
+
+
+============================================================
+Output:
+============================================================
+Akki@Akki MINGW64 /c/mca/mca-2/os
+$ sh prog3.sh
+Enter six digit Number : 963258
+Reversed Number is :  852369

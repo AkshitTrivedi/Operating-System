@@ -1,0 +1,36 @@
+===================================================
+Name : Trivedi Akshit Ajaybhai
+Roll : 40
+Subject : Operating System
+Assignment 1
+Course : MCA-2
+===================================================
+
+# 9. Write a script to check given number is prime or not
+
+echo -e -n "Enter number : "
+read num
+
+for ((i=2; i<=num/2; i++))
+do
+        if [ $((num%i)) -eq 0 ]
+        then
+                echo "$num is not Prime Number"
+        exit
+        fi
+
+done
+
+echo "$num is a prime number"
+
+============================================================
+Output:
+============================================================
+
+[mca2148@agni assignment1]$ sh prog9.sh
+Enter number : 40
+40 is not Prime Number
+
+[mca2148@agni assignment1]$ sh prog9.sh
+Enter number : 13
+13 is a prime number

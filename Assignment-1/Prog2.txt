@@ -1,0 +1,134 @@
+===================================================
+Name : Trivedi Akshit Ajaybhai
+Roll : 40
+Subject : Operating System
+Assignment 1
+Course : MCA-2
+===================================================
+
+#2. Write a menu driven shell script for remove, rename, copy and modify a file.
+
+i="y"
+       
+        echo "1. Remove File "
+        echo "2. Rename File "
+        echo "3. Copy File "
+		echo "4. Modify File"
+		echo "5. List"
+
+while [ $i = "y" ]
+do
+	 echo -e -n "\nEnter your choice : "
+     read choice
+	 
+	 case $choice in
+		
+			1) echo -e "\n Enter File Name : "
+			   read filename
+			   
+			   rm $filename			   
+			   
+			   echo "File has been removed successfully";;
+			
+			2) echo -e "\n Enter File Name : "
+			   read oldname
+			   
+			   echo -e "\n Enter new File Name  with extenstion : "
+			   read newfilename
+			   
+			   mv $oldname $newfilename 						#mv oldname newfilename
+			   
+			   echo "File has been Rename successfully";;
+			   
+			3) echo -e "\n Enter File Name : "
+			   read filenm3
+			   
+			   echo -e "\n Enter File Name  for copy: "
+			   read filenmcp			   
+			   
+			   cp $filenm3 $filenmcp
+			   
+			   echo "File has been Copy successfully";;
+			   
+			4) echo -e "\n Enter File Name : "
+			   read filenm4
+			   
+			   vi $filenm4;;
+			   
+			5) ls ;;
+			
+			*) echo "Invalid Choice";; 
+			
+		esac 
+			   
+		echo "Do you want to continue? [y/n]"
+        read i     
+done
+
+============================================================
+Output:
+============================================================
+Akki@Akki MINGW64 /c/mca/mca-2/os
+$ sh prog2.sh
+1. Remove File
+2. Rename File
+3. Copy File
+4. Modify File
+5. List
+
+Enter your choice : 5
+Prog1.txt  prog2.sh  tempdirectory  test.sh
+Do you want to continue? [y/n]
+y
+
+Enter your choice : 3
+
+ Enter File Name :
+test.sh
+
+ Enter File Name  for copy:
+newfile.sh
+File has been Copy successfully
+Do you want to continue? [y/n]
+y
+
+Enter your choice : 5
+Prog1.txt  newfile.sh  prog2.sh  tempdirectory  test.sh
+Do you want to continue? [y/n]
+y
+
+Enter your choice : 2
+
+ Enter File Name :
+newfile.sh
+
+ Enter new File Name  with extenstion :
+newname.sh
+File has been Rename successfully
+Do you want to continue? [y/n]
+y
+
+Enter your choice : 5
+Prog1.txt  newname.sh  prog2.sh  tempdirectory  test.sh
+Do you want to continue? [y/n]
+y
+
+Enter your choice : 4
+
+ Enter File Name :
+newname.sh
+Do you want to continue? [y/n]
+y
+
+Enter your choice : 1
+
+ Enter File Name :
+newname.sh
+File has been removed successfully
+Do you want to continue? [y/n]
+y
+
+Enter your choice : 5
+Prog1.txt  prog2.sh  tempdirectory  test.sh
+Do you want to continue? [y/n]
+n

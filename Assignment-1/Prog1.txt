@@ -1,0 +1,84 @@
+===================================================
+Name : Trivedi Akshit Ajaybhai
+Roll : 40
+Subject : Operating System
+Assignment 1
+Course : MCA-2
+===================================================
+
+#1. Write a menu driven shell script for basic arithmetic operations.
+
+i="y"
+
+        echo -n "Enter The Value of num1 : "
+        read num1
+
+        echo -n "Enter the value of num2 : "
+        read num2
+
+        echo "1. Addition"
+        echo "2. Substraction "
+        echo "3. Multiplication"
+        echo "4. Division"
+
+
+while [ $i = "y" ]
+do
+
+
+        echo -e -n "\nEnter your choice : "
+        read choice
+
+
+        case $choice in
+                1)      echo "$num1 + $num2 = $(($num1 + $num2))";;
+                2)      echo "$num1 - $num2 = " `expr $num1 - $num2`;;
+                3)      echo "$num1 * $num2 = $(($num1 * $num2))";;                 # `expr $num1 \* $num2`
+                4)      echo "$num1 / $num2 = $[$num1 / $num2]";;
+                *)      echo "Invalid Choice";;
+        esac
+
+        echo "Do you wnat to continue? [y/n]"
+        read i
+
+done
+~
+~
+~
+~
+~
+~
+~
+"prog1.sh" 44L, 630C written
+
+============================================================
+Output:
+============================================================
+[mca2148@agni assignment1]$ sh prog1.sh
+Enter The Value of num1 : 50
+Enter the value of num2 : 5
+1. Addition
+2. Substraction
+3. Multiplication
+4. Division
+
+Enter your choice : 1
+50 + 5 = 55
+Do you wnat to continue? [y/n]
+y
+
+Enter your choice : 2
+50 - 5 =  45
+Do you wnat to continue? [y/n]
+y
+
+Enter your choice : 3
+50 * 5 = 250
+Do you wnat to continue? [y/n]
+y
+
+Enter your choice : 4
+50 / 5 = 10
+Do you wnat to continue? [y/n]
+n
+[mca2148@agni assignment1]$

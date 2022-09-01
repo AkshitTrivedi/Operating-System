@@ -1,0 +1,140 @@
+===================================================
+Name : Trivedi Akshit Ajaybhai
+Roll : 40
+Subject : Operating System
+Assignment 1
+Course : MCA-2
+===================================================
+
+# 6. Write a menu driven shell script for storing employee
+#        information (like add, modify, delete, display info).
+
+choice=-1
+while [ $choice -ne 0 ]
+do
+    echo -e "Employee File Oparations"
+    echo "0. Exit"
+    echo "1. Add Employee"
+    echo "2. Modify Employee"
+    echo "3. Delete Employee"
+    echo "4. Display Employee"
+    echo -n "Enter Choice: "
+    read choice
+
+    case $choice in
+        0)
+            echo "Exiting...";;
+        1)
+            echo -n "Enter Employee Id: "
+            read empId
+            echo -n "Enter Employee Name: "
+            read empName
+            echo -n "Enter Employee Salary: "
+            read empSalary
+
+            `echo "$empId|$empName|$empSalary" >> $empId.data`
+            echo "Employee Created" ;;
+        2)
+            echo "Modify Employee" ;;
+        3)
+            echo "Enter Employee Id: "
+            read empId
+            if [ -f "$empId.data" ];
+            then
+                `rm $empId.data`
+                echo "Employee $empId is Deleted"
+            else
+                echo "Employee $empId is Not Found"
+            fi
+            ;;
+        4)
+            echo "Employee Details"
+            for data in `ls -1 | cut -d " " -f 11`
+            do
+                echo "$data"
+            done
+            ;;
+        *)
+            echo "Enter Valid Choice"
+            ;;
+    esac
+done
+
+============================================================
+Output:
+============================================================
+
+
+[mca2148@agni assignment1]$ sh prog6.sh
+Employee File Oparations
+0. Exit
+1. Add Employee
+2. Modify Employee
+3. Delete Employee
+4. Display Employee
+Enter Choice: 1
+Enter Employee Id: 40
+Enter Employee Name: Akshit
+Enter Employee Salary: 12000
+Employee Created
+
+Employee File Oparations
+0. Exit
+1. Add Employee
+2. Modify Employee
+3. Delete Employee
+4. Display Employee
+Enter Choice: 1
+Enter Employee Id: 36
+Enter Employee Name: Parth
+Enter Employee Salary: 150000
+Employee Created
+
+Employee File Oparations
+0. Exit
+1. Add Employee
+2. Modify Employee
+3. Delete Employee
+4. Display Employee
+Enter Choice: 3
+Enter Employee Id:
+40
+Employee 40 is Deleted
+
+Employee File Oparations
+0. Exit
+1. Add Employee
+2. Modify Employee
+3. Delete Employee
+4. Display Employee
+Enter Choice: 4
+Employee Details
+36.data
+prog10.sh
+prog11.sh
+prog12.sh
+prog14.sh
+prog16.sh
+prog17.sh
+prog1.sh
+prog20.sh
+prog2.sh
+prog3.sh
+prog4.sh
+prog5.sh
+prog6.sh
+prog7.sh
+prog8.sh
+prog9.sh
+Akshit.data
+
+Employee File Oparations
+0. Exit
+1. Add Employee
+2. Modify Employee
+3. Delete Employee
+4. Display Employee
+Enter Choice: 0
+Exiting...
+
+[mca2148@agni assignment1]$
